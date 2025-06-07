@@ -1,0 +1,302 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #fff4f0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 900px;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 16px;
+    background-color: #fff8f0;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+    position: relative;
+}
+
+header {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+header h1 {
+    color: #cc0000;
+    font-size: 28px;
+}
+
+.intro-message {
+    color: #555;
+    font-size: 14px;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* Bot profile icon */
+.college-profile-icon {
+    position: absolute;
+    top: 25px;       /* Move logo slightly down */
+    left: 25px;      /* Move logo slightly to the right */
+    z-index: 10;     /* Keep it above background but below interactive UI */
+}
+
+.college-profile-icon img {
+    width: 60px;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #cc0000;
+    background-color: #ffffff;
+    padding: 4px;
+}
+
+.main-layout {
+    display: flex;
+    gap: 20px;
+}
+
+/* Chatbox Styling */
+.chatbox-container {
+    flex: 1;
+    border: 2px solid #cc0000;
+    border-radius: 12px;
+    padding: 15px;
+    background-color: #ffffff;
+    min-height: 400px;
+    max-height: 400px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#chatbox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 400px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    padding: 10px;
+}
+
+.message {
+    max-width: 70%;
+    padding: 10px 15px;
+    margin: 8px;
+    border-radius: 20px;
+    word-wrap: break-word;
+    line-height: 1.4;
+    font-size: 14px;
+    position: relative;
+}
+
+.user {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+    text-align: right;
+}
+
+.bot {
+    background-color: #ffdee1;
+    align-self: flex-start;
+    text-align: left;
+}
+
+.timestamp {
+    font-size: 11px;
+    color: #555;
+    margin-top: 5px;
+    text-align: right;
+}
+
+.input-area {
+    display: flex;
+    margin-top: 10px;
+}
+
+.input-area input[type="text"] {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    font-size: 16px;
+    transition: border 0.3s;
+    caret-color: red;
+}
+
+.input-area input[type="text"]:focus {
+    border-color: #cc0000;
+    outline: none;
+}
+
+.input-area button {
+    margin-left: 10px;
+    background-color: #cc0000;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.input-area button:hover {
+    background-color: #ff0000;
+}
+
+/* Robot + Thinking Layout */
+.robot-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 70px;
+}
+
+.robot-placeholder {
+    width: 220px;
+    height: 220px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: #fc8a8a;
+    border-radius: 5%;
+    box-shadow: 0 4px 20px rgba(255, 0, 0, 0.4), 0 0 30px rgba(255, 0, 0, 0.2), 0 0 50px rgba(255, 0, 0, 0);
+}
+
+/* Typing Animation */
+#thinking-indicator {
+    margin-top: 20px;
+    font-style: italic;
+    color: #000000;
+    text-align: center;
+    font-size: 14px;
+}
+.mobile-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.dots::after {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    animation: dots 1.5s steps(3, end) infinite;
+}
+.bot {
+    position: relative;
+    padding-left: 40px;
+  }
+  .bot::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    width: 28px;
+    height: 28px;
+    background-image: url('https://cdn1.vectorstock.com/i/1000x1000/85/85/robot-face-icon-smiling-face-laugh-emotion-robotic-vector-15868585.jpg'); /* <-- replace with your robot image path */
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+  }
+
+@keyframes dots {
+    0% { content: ''; }
+    33% { content: '.'; }
+    66% { content: '..'; }
+    100% { content: '...'; }
+}
+.follow-up-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  
+  .follow-up-btn {
+    background-color: #f1f1f1;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .follow-up-btn:hover {
+    background-color: #ddd;
+  }
+  
+/* Hide large robot on mobile/tablet */
+@media (max-width: 768px) {
+    /* Push the chatbox down slightly so it doesn't collide with the logo */
+    .chatbox-container {
+        margin-top: 50px; /* Adjust this value if needed */
+        min-height: 500px;
+        max-height: 500px;
+    }
+
+    /* Hide large robot on mobile/tablet */
+    .robot-column {
+      display: none;
+    }
+
+    /* Add space for icon inside bot messages */
+    .bot {
+      position: relative;
+      padding-left: 40px;
+    }
+
+    .mobile-footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+  
+    .bot::before {
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      width: 28px;
+      height: 28px;
+      background-image: url('https://cdn1.vectorstock.com/i/1000x1000/85/85/robot-face-icon-smiling-face-laugh-emotion-robotic-vector-15868585.jpg'); /* <-- replace with your robot image path */
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+      border: 1px solid #ccc;
+    }
+}
+/* Default: Hide mobile warning, show desktop warning */
+.warning-mobile {
+    display: none;
+    margin-top: 10px;
+    color: #aa0000;
+    font-size: 0.9em;
+    font-style: italic;
+    padding: 5px;
+}
+
+.warning-desktop {
+    display: block;
+    margin-top: 20px;
+    color: #aa0000;
+    font-size: 0.9em;
+    font-style: italic;
+    padding: 5px;
+}
+
+/* On small screens: hide desktop warning, show mobile warning */
+@media (max-width: 768px) {
+    .warning-mobile {
+        display: block;
+    }
+
+    .warning-desktop {
+        display: none;
+    }
+}
